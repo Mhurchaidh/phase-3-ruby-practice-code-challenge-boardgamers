@@ -1,4 +1,4 @@
-# Phase 3 Mock Code Challenge: Board Gamerz
+# Phase 3 Practice Code Challenge: Boardgamers
 
 We have three models: `Boardgame`, `Review`, and `Player`.
 
