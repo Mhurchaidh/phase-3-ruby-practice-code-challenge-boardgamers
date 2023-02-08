@@ -3,6 +3,7 @@
 puts "Deleting Boardgame/Player data..."
 Boardgame.destroy_all
 Player.destroy_all
+Review.destroy_all
 
 puts "Creating boardgames..."
 catan = Boardgame.create(name: "Settlers of Catan", year_released: 1995)
@@ -23,5 +24,15 @@ puts "Creating reviews..."
 # * and a review belongs to a player.                              *
 # ********************************************************************
 # Create reviews Here
+
+puts "Generating Reviews..."
+10.times {
+    Review.create(
+        boardgame_id: Boardgame.all.sample.id,
+        player_id: Player.all.sample.id,
+        hours_played: rand(5..50),
+        content: Faker::Fantasy::Tolkien.poem
+    )
+}
 
 puts "Seeding done!"
